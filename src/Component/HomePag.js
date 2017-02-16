@@ -7,17 +7,15 @@ sername: "Vaider",
 states : "Dark side is top."
 }
 
-
-
-
 class HomePag extends React.Component{
 
   constructor(props){
     super(props);
     this.state = {
-      text : ''
+      text : '',
+      newsBlocks : []
     };
-    this.handleTextChange=handleTextChange.bind(this);
+    this.handleTextChange=this.handleTextChange.bind(this);
   }
   handleTextChange(event){
     this.setState({
@@ -42,7 +40,8 @@ render(){
                        placeholder="Введите название группы"
                        value={this.state.text}
                        onChange={ this.handleTextChange } />
-                <div className="NewDiv">{this.state.news}</div>
+
+                <div className="NewDiv">{this.state.newsBlocks}</div>
                 </div>
          </div>
 
